@@ -1,0 +1,87 @@
+<div class="main-panel">
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top " id="navigation-example">
+            <div class="container-fluid">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                        <button  routerLink="/jobs" type="button" class="btn btn-default pull-right">Back</button>
+                </div>
+            </div>
+        </nav>
+        <!-- End Navbar -->
+        <div class="content">
+            <div class="container-fluid">
+                <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                    <div class="card-header card-header-primary">
+                        <h4 class="card-title">Example Trigger</h4>
+                    </div>
+                    <div class="card-body">
+                    <form [formGroup]="runJobForm"  id="formExampleTable" (ngSubmit)="onSubmit()">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                        <mat-form-field color="primary">
+                                            <mat-label>Schedule Name</mat-label>
+                                            <mat-select [(value)]="selectedJobname" formControlName="selectedJobname">
+                                                <mat-option   [value]="item.name" *ngFor="let item of logHistory" color="primary">{{item.name | uppercase}}</mat-option>
+                                            </mat-select>
+                                        </mat-form-field>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                            <div class="form-group">
+                                <mat-form-field color="primary">
+                                    <mat-label>Yesterday Start Date</mat-label>
+                                    <input matInput [matDatepicker]="picker" formControlName="yesterdayStartDate" (dateChange)="setMinDate($event)">
+                                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                                    <mat-datepicker #picker color="primary"></mat-datepicker>
+                                </mat-form-field>
+                            </div>
+                            </div>
+                            <div class="col-md-4">
+                            <div class="form-group">
+                                <mat-form-field color="primary">
+                                    <mat-label>End Date</mat-label>
+                                    <input matInput [matDatepicker]="picker2" formControlName="yesterdayEndDate" [(ngModel)]="maxDate" [min]="minYesterdayDate">
+                                    <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                                    <mat-datepicker #picker2 color="primary"></mat-datepicker>
+                                </mat-form-field>
+                            </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <mat-form-field color="primary">
+                                        <mat-label>This Month Start Date</mat-label>
+                                        <input matInput [matDatepicker]="picker3" formControlName="thisMonthStartDate" (dateChange)="setMonthMinDate($event)">
+                                        <mat-datepicker-toggle matSuffix [for]="picker3"></mat-datepicker-toggle>
+                                        <mat-datepicker #picker3 color="primary"></mat-datepicker>
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <mat-form-field color="primary">
+                                        <mat-label>This Month End Date</mat-label>
+                                        <input matInput [matDatepicker]="picker4" formControlName="thisMonthEndDate" [min]="minMonthDate" [(ngModel)]="maxMonthDate">
+                                        <mat-datepicker-toggle matSuffix [for]="picker4"></mat-datepicker-toggle>
+                                        <mat-datepicker #picker4 color="primary"></mat-datepicker>
+                                    </mat-form-field>
+                                </div>
+                            </div> 
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <mat-checkbox color="primary" formControlName="isDeveloperTest">Is Developer Test</mat-checkbox>
+                                </div>
+                            </div> 
+                        </div>
+                        <button class="btn btn-primary pull-right">Run</button>
+                        <div class="clearfix"></div>
+                        </form>
+                    </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>

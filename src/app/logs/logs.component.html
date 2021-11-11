@@ -1,0 +1,90 @@
+<div class="main-panel">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top " id="navigation-example">
+        <div class="container-fluid">
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                <button  routerLink="../../" type="button" class="btn btn-default pull-right">Back</button>
+            </div>
+        </div>
+    </nav>
+    <!-- End Navbar -->
+    <div class="content">
+        <div class="container-fluid">
+        <div class="row justify-content-md-center" *ngIf="loading">
+                    <div class="lds-css ng-scope">
+          <div class="full-100 lds-disk"><div><div></div><div></div></div></div>
+        </div>
+        </div>
+        <div class="row" *ngIf="!loading">
+            <div class="col-md-12">
+            <div class="card">
+                <div class="card-header card-header-info">
+                <h4 class="card-title ">{{jobName | uppercase}} {{historyId}} Logs</h4>
+                </div>
+                <div class="card-body">
+                <div class="table-responsive">
+                    <div *ngIf="itemDetails.length > 0; then checkedTrue else checkedFalse"></div>
+                    <ng-template #checkedTrue>
+                        <table class="table">
+                                <thead>
+                                    <th>
+                                        Message
+                                    </th>
+                                    <th>
+                                        Level
+                                    </th>
+                                    <th>
+                                        Created Date
+                                    </th>
+                                </thead>
+                                <tbody>
+                                    <tr  *ngFor="let history of itemDetails">
+                                        <td>
+                                            {{history.message}}
+                                        </td>
+                                        <td>
+                                            {{history.level}}
+                                        </td>
+                                        <td>
+                                            {{history.timestamp}}
+                                        </td>
+                                        <td>
+                                            <a type="button" class="btn btn-info pull-right" (click)="openDialog(history.fields)" data-toggle="modal" data-target="#FieldsModal">Fields</a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </ng-template>
+                    <ng-template #checkedFalse> 
+                            <div class="alert alert-secondary" role="alert">
+                                There is no content to show. Item detail is empty.
+                            </div>
+                    </ng-template>
+                </div>
+                </div>
+            </div>
+            </div>
+        </div>
+        </div>
+    </div>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="FieldsModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Fields</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <ngx-json-viewer [json]="dataDialog" [expanded]="false"></ngx-json-viewer>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+        </div>
+    </div>
+</div>
+                

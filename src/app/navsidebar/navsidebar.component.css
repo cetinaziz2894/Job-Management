@@ -1,0 +1,35 @@
+.sidenav-container {
+  position: absolute;
+  top: 64px;
+  bottom: 0px;
+  left: 0;
+  right: 0;
+}
+
+.sidenav-sidenav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  background: #1565C0;
+}
+.mat-list-icon {
+  color: rgba(0, 0, 0, 0.54);
+}
+
+.mat-flat-button{
+  background-color: #FFF8F0;
+  width: -webkit-fill-available;
+}
+.mat-subheader{
+  text-align: center;
+  color: #FFF8F0;
+}
+
+.mat-button{
+  background-color: #303F9F;
+  color: #FFF8F0;
+  margin-left: 2%;
+  margin-top: 2%;
+}
+

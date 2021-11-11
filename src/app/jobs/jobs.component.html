@@ -1,0 +1,22 @@
+<div class="main-panel" >
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top " id="navigation-example">
+    <div class="container-fluid">
+      <div class="navbar-wrapper">
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+          <a class="navbar-brand" href="javascript:void(0)" class="pull-left mr-4">Jobs</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <!-- End Navbar -->
+  <div class="content" style="margin-top: 25px;">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6" *ngFor="let component of components">
+          <app-general [component]="component"></app-general>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

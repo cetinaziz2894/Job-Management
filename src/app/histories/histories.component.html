@@ -1,0 +1,84 @@
+<div class="main-panel">
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top " id="navigation-example">
+    <div class="container-fluid">
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+            <button  routerLink="../../" type="button" class="btn btn-default pull-right">Back</button>
+        </div>
+    </div>
+  </nav>
+  <!-- End Navbar -->
+
+  <div class="content">
+    <div class="container-fluid">
+      <div class="row justify-content-md-center" *ngIf="loading">
+                <div class="lds-css ng-scope">
+          <div class="full-100 lds-disk"><div><div></div><div></div></div></div>
+        </div>
+      </div>
+      <div class="row" *ngIf="!loading">
+        <div class="col-md-12">
+          <div class="card">
+            <div class="card-header card-header-primary">
+              <h4 class="card-title ">{{jobName | uppercase}} Histories</h4>
+            </div>
+            <div class="card-body">
+              <div class="table-responsive">
+                <div *ngIf="logHistory.length > 0; then checkedTrue else checkedFalse"></div>
+                <ng-template #checkedTrue>
+                    <table class="table">
+                        <thead>
+                            <th>
+                                Job Name
+                            </th>
+                            <th>
+                                Start Date
+                            </th>
+                            <th>
+                                End Date
+                            </th>
+                            <th>
+                              Elapsed Time
+                            </th>
+                            <th>
+                                Error
+                            </th>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let history of logHistory">
+                                <td>
+                                    {{history.jobName}}
+                                </td>
+                                <td>
+                                  {{history.startDate | date : 'yyyy-MM-dd H:mm'}}
+                                </td>
+                                <td>
+                                  {{history.endDate | date : 'yyyy-MM-dd H:mm'}}
+                                </td>
+                                <td>
+                                  {{history.elapsedTime}}
+                                </td>
+                                <td>
+                                  {{history.isError}}
+                                </td>
+                                <td class="text-primary">
+                                  <a routerLink="{{history.jobId}}/logs"type="button" class="btn btn-primary pull-right">Logs</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                      </table>
+                </ng-template>
+                <ng-template #checkedFalse>
+                  <div class="alert alert-secondary" role="alert">
+                    There is no content to show. Item detail is empty.
+                  </div>
+                </ng-template>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+            

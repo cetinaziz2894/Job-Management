@@ -1,0 +1,30 @@
+mat-form-field {
+    margin-right: 25px;
+  }
+
+  mat-checkbox{
+    margin-right: 25px;
+}
+
+::ng-deep .mat-checkbox-layout{
+  margin-top:12px;
+}
+
+::ng-deep datepicker-value-example .mat-form-field-label{
+   color:#a9afbbd1;
+}
+
+::ng-deep .mat-datepicker-toggle{
+   color:#a9afbbd1;
+}
+::ng-deep .mat-form-field-underline{
+background: #a9afbbd1;
+}
+
+::ng-deep .mat-checkbox-frame {
+  border-color: #a9afbbd1;
+}
+
+::ng-deep .mat-select .mat-select-value-text{
+  color:#a9afbbd1;
+}

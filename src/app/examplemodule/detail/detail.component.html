@@ -1,0 +1,88 @@
+<div class="main-panel">
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top " id="navigation-example">
+            <div class="container-fluid">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                    <button  routerLink="/jobs/" type="button" class="btn btn-default pull-right">Back</button>
+                </div>
+            </div>
+        </nav>
+        <!-- End Navbar -->
+    
+        <div class="content">
+            <div class="container-fluid">
+                <div class="row justify-content-md-center"  *ngIf="loading">
+                            <div class="lds-css ng-scope">
+              <div class="full-100 lds-disk"><div><div></div><div></div></div></div>
+            </div>
+                </div>
+                <div class="row" *ngIf="!loading">
+                <div class="col-md-12">
+                    <div class="card">
+                    <div class="card-header card-header-primary">
+                        <h4 class="card-title ">Example Schedules</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                        <div *ngIf="schedules.length > 0; then checkedTrue else checkedFalse"></div>
+                        <ng-template #checkedTrue>
+                                <table class="table">
+                                    <thead>
+                                        <th>
+                                            Job Name
+                                        </th>
+                                        <th>
+                                            Job Descriptions
+                                        </th>
+                                    </thead>
+                                    <tbody>
+                                        <tr *ngFor="let schedule of schedules">
+                                            <td>
+                                                {{schedule.name}}
+                                            </td>
+                                            <td>
+                                                <span>{{schedule.description}}
+                                                </span>
+                                            </td>
+                                            <td>
+                                                    <button class="btn btn-primary pull-right" (click)="setSchedule(schedule.name)">Trigger</button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                        </ng-template>
+                        <ng-template #checkedFalse> 
+                            <div class="alert alert-secondary" role="alert">
+                                There is no content to show. Item detail is empty.
+                            </div>
+                        </ng-template>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="triggerModalExample" [hidden]="postCallIsSubmitted" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content" id="triggerModalBody">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>
+                Do you want to trigger "{{schedule | uppercase}}" ?
+            </p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary"  (click)="triggerJob('Example Trigger')">Trigger</button>
+          </div>
+        </div>
+      </div>
+    </div>
+        

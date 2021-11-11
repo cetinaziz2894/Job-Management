@@ -1,0 +1,53 @@
+<table class="table" *ngIf="logs">
+    <thead>
+      <th>
+        Application
+      </th>
+      <th>
+        Message
+      </th>
+      <th>
+        Created Date
+      </th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let log of logs">
+        <td>
+          {{log.fields.application}}
+        </td>
+        <td>
+          {{log.message}}
+        </td>
+        <td>
+          {{log.timestamp }}
+        </td>
+        <td class="text-primary">
+          <a type="button" class="btn btn-{{jobClass}} pull-right" (click)="openDialog(log.fields)" data-toggle="modal"
+            data-target="#fieldsModal">Fields</a>
+        </td>
+        <td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="alert alert-secondary" role="alert" *ngIf="!logs">
+    There is no content to show. Item detail is empty.
+  </div>
+  <!-- Modal -->
+  <div class="modal fade" id="fieldsModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Fields</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+              <ngx-json-viewer [json]="dataDialog" [expanded]="false"></ngx-json-viewer>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>

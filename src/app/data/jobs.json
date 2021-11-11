@@ -1,0 +1,47 @@
+[
+    {
+    "name": "EXAMPLE",
+    "jobname": "EXAMPLE",
+    "icon": "trending_up",
+    "routeTrigger": "trigger",
+    "routeHistory": "histories",
+    "cardClass": "card-header-warning",
+    "cardIconClass": "card-header-light-purple",
+    "serviceCallName": "job_1",
+    "healthyUrl": "/healthcheck",
+    "routeDetailUrl": "/schedules",
+    "statisticUrl": "/statistics",
+    "historiesLast": "/last",
+    "routeDetail": "detail"
+  },
+  {
+    "name": "EXAMPLE",
+    "jobname": "EXAMPLE",
+    "icon": "trending_up",
+    "routeTrigger": "trigger",
+    "routeHistory": "histories",
+    "cardClass": "card-header-success",
+    "cardIconClass": "card-header-light-purple",
+    "serviceCallName": "job_2",
+    "healthyUrl": "/healthcheck",
+    "routeDetailUrl": "/schedules",
+    "statisticUrl": "/statistics",
+    "historiesLast": "/last",
+    "routeDetail": "detail"
+  },
+  {
+    "name": "EXAMPLE",
+    "jobname": "EXAMPLE",
+    "icon": "trending_up",
+    "routeTrigger": "trigger",
+    "routeHistory": "histories",
+    "cardClass": "card-header-danger",
+    "cardIconClass": "card-header-light-purple",
+    "serviceCallName": "job_3",
+    "healthyUrl": "/healthcheck",
+    "routeDetailUrl": "/schedules",
+    "statisticUrl": "/statistics",
+    "historiesLast": "/last",
+    "routeDetail": "detail"
+  }
+]
