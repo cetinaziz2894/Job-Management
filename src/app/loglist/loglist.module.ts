@@ -18,10 +18,6 @@ import { LogTableComponent } from './log-table/log-table.component';
     ReactiveFormsModule,
     NgxJsonViewerModule,
     RouterModule.forRoot([
-      { path: '',
-        redirectTo: 'logs',
-        pathMatch: 'full'
-      },
       {
         path: 'logs',
         component: SearchComponent

@@ -1,27 +1,58 @@
-# JobManagement
+# Job Management App - Angular 8
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.0.
+<img src="https://raw.githubusercontent.com/cetinaziz2894/job-management/master/src/assets/img/screen_1.PNG" alt="screenshot-1" style="max-width:100%;" >
+<img src="https://raw.githubusercontent.com/cetinaziz2894/job-management/master/src/assets/img/screen_2.PNG" alt="screenshot-2" style="max-width:100%;" >
+<img src="https://raw.githubusercontent.com/cetinaziz2894/job-management/master/src/assets/img/screen_3.PNG" alt="screenshot-3" style="max-width:100%;" >
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.0.2.
 
-## Code scaffolding
+This is a demo project for job management app. 
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+The app link : https://stupefied-einstein-e27164.netlify.app
 
-## Build
+## Available Scripts
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+First clone the app then, in the project directory, you can run:
 
-## Running unit tests
+### Clone the app
+```bash
+git clone https://github.com/cetinaziz2894/job-management.git
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Install packages
+```bash
+cd job-management
+npm install
+```
 
-## Running end-to-end tests
+### Start the app
+```bash
+npm run start
+```
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+Runs the app in the development mode.\
+Open [http://localhost:4200](http://localhost:4200) to view it in the browser.
 
-## Further help
+### Test the app
+```bash
+npm run test
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+### Build the app
+```bash
+npm run build
+```
+
+## Project Overview
+This is a job management app w,th charts. You can see tables, cards, form, modals etc. in this app. It contains one example module for showing the module structure in app module.
+
+## Used Tecknologies
+
+- Angular12 
+- Material
+- Jquery
+- Bootstrap
+- Chart.js
+- ngx-json-viewer
+- Rxjs
